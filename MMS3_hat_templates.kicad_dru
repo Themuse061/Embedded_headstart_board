@@ -1,0 +1,7 @@
+(version 1)
+
+# JLCPCB: PTH to track 0.28 min / 0.35 recommended. Vias use the board minimum
+# hole clearance (0.2, JLC via hole to track) set in Board Setup -> Constraints.
+(rule "PTH pad hole clearance"
+	(constraint hole_clearance (min 0.3mm))
+	(condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole'"))
