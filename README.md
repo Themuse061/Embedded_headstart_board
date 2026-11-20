@@ -95,15 +95,15 @@ Here are a few project suggestions to help you combine different hardware periph
 
 ### Schematy
 
-Przede wszystkim będziecie potrzebować oprogramowania, które pozwala czytać schematy płytki. To jedna z najważniejszych umiejętności programisty embedded. Moja główna rekomendacja to instalacja **KiCada**, czyli oprogramowania EDA, w którym ta płytka została zaprojektowana. Inną świetną alternatywą jest [KiCanvas](https://kicanvas.org/), internetowa przeglądarka układów PCB i schematów KiCada. Sprawdza się świetnie przy prostszych płytkach, takich jak ta, choć KiCad jest lepszy przy bardziej złożonych projektach. Nie bójcie się też googlować/pytać AI, jak coś działa, i nie bójcie się zaglądać do datasheetów po odpowiedzi. Wkrótce będą one waszym głównym źródłem informacji.
+Przede wszystkim będziecie potrzebować oprogramowania, które pozwala zobaczyć schemat płytki. To jedna z bardziej przydatnych umiejętności programisty embedded. Moja główna rekomendacja to instalacja **KiCada**, czyli oprogramowania EDA, w którym ta płytka została zaprojektowana. Inną świetną alternatywą jest [KiCanvas](https://kicanvas.org/), internetowa przeglądarka układów PCB i schematów KiCada. Sprawdza się świetnie przy prostszych płytkach, takich jak ta, choć KiCad jest lepszy przy bardziej złożonych projektach. Nie bójcie się też googlować/pytać AI, jak coś działa, i nie bójcie się zaglądać do datasheetów po odpowiedzi. Wkrótce będą one waszym głównym źródłem informacji.
 
 ### Tryb Altmode i tryb Chainbus
 
-MMS3 (główna płytka, do której podłącza się ten PCB) ma dwa tryby: **Altmode** i **Chainbus mode**. Jaka jest różnica?
+MMS3 (główna płytka, do której podłącza się ten PCB) ma dwa tryby działania: **Altmode** i **Chainbus mode**. Jaka jest różnica?
 
-- **Chainbus mode:** To tryb domyślny. Pozwala układać wiele hatów (płytek takich jak ta) na MMS3, tworząc wieżę (do 8 płytek). Kosztem tego jest to, że na każdym hacie dostępne są tylko SPI, I2C i UART. Oznacza to, że nie możecie używać bezpośrednich przerwań sprzętowych od peryferiów znajdujących się na hacie. Więcej szczegółów pojawi się w nadchodzącej dokumentacji ModuCard.
+- **Chainbus mode:** To tryb domyślny. Pozwala układać wiele hatów na MMS3, tworząc wieżę (do 8 płytek). Kosztem tego jest to, że na każdym hacie dostępne są tylko SPI, I2C i UART. Oznacza to, że nie możecie używać bezpośrednich przerwań sprzętowych od peryferiów znajdujących się na hacie. Więcej szczegółów w [https://github.com/Themuse061/Moducard_System_Handbook](https://github.com/Themuse061/Moducard_System_Handbook).
 
-- **Altmode:** Ten tryb jest przeznaczony do specyficznych zastosowań (jak ta płytka headstart). W Altmode można podłączyć do MMS3 tylko jeden hat, ale oprócz standardowego interfejsu Chainbus zyskujecie dostęp do całego rzędu dedykowanych pinów. Te wolne piny możecie skonfigurować, jak chcecie: jako bezpośrednie przerwania, SPI, USART lub ADC! Sprawdźcie główny schemat tej płytki, na którym znajduje się tabela pokazująca, jak każdy pin można przypisać w Altmode.
+- **Altmode:** Ten tryb jest przeznaczony do specyficznych zastosowań (jak ta płytka headstart). W Altmode można podłączyć do MMS3 tylko jeden hat, ale możecie używać dodatkowego  rzędu pinów i nie musicie podłączać się do płytek. Piny możecie skonfigurować, jak chcecie: jako bezpośrednie przerwania, SPI, USART lub ADC! Sprawdźcie główny schemat tej płytki, na którym znajduje się tabela pokazująca, jak każdy pin można przypisać w Altmode.
 
 > !NOTE
 > Ta płytka została zaprojektowana tak, aby zawierała zarówno przełączniki magistrali (bus switche) z protokołami zbliżonymi do ChainBus, jak i peryferia podłączone bezpośrednio jak w AltMode, dzięki czemu możecie nauczyć się pracy z obydwoma podejściami.
