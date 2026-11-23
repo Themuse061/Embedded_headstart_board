@@ -1,0 +1,3 @@
+[submodule "templete_HAL"]
+	path = templete_HAL
+	url = git@github.com:Fiedal/MMS-embedded-headstart-software-base-HAL.git

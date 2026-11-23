@@ -37,6 +37,16 @@ We recommend starting with Arduino library in PlatformIO first, as it is beginne
 
 All templates are included in this repository in template_XYZ directory, where XYZ is a name of what method is used in this template ie. templete_HAL.
 
+Templetes are added to this repository as git submodules to download them with this repo use this command:
+```
+git clone --recurse-submodules git@github.com:Themuse061/Embedded_headstart_board.git
+```
+
+If you have already downloaded repo with `git clone` use this command in repository directory:
+```
+git submodule update --init --recursive
+```
+
 #### HAL
 
 It already includes the base Chainbus pin definitions. All you need to do is configure the Altmode pins inside STM32CubeMX (`.ioc` file), generate the project code, and flash the board.
@@ -120,6 +130,16 @@ W KoNaR używamy głównie dwóch podejść:
 Zalecamy, aby zacząć od biblioteki Arduino w PlatformIO, ponieważ jest przyjazna dla początkujących. Później proponuję spróbować HAL-a, ponieważ usuwa on część warstw abstrakcji znanych z Arduino, dzięki czemu lepiej zrozumiecie, co dzieje się „pod maską”. Następnie przejdźcie do StmEpic lub Zephyra.
 
 Wszystkie szablony znajdują się w tym repozytorium w katalogu template_XYZ, gdzie XYZ to nazwa użytej metody w danym szablonie, np. templete_HAL.
+
+Szablony są dodane do tego repozytorium jako sumboduły gita, aby je pobrać razem z tym repozytorium uzyj tej komendy:
+```
+git clone --recurse-submodules git@github.com:Themuse061/Embedded_headstart_board.git
+```
+
+Jeśli już pobrałeś to repozystorium używająć `git clone` to submoduły można pobrać tą komendą w folderze repozytorium:
+```
+git submodule update --init --recursive
+```
 
 #### HAL
 
